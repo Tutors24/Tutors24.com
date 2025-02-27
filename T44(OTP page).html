@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+ body{background:url(img123.jpg)}
+form{
+    text-align: center;
+        width: 30%;
+        margin: 0px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        margin-left: 210px 0px;}
+h1{
+    color: white;
+text-align: center;
+font-size: 60px;}
+
+h3{
+    color: black;
+text-align: center;
+font-size: 30px;}
+
+input{
+        width: 58%;
+        padding: 10px;
+        margin: 10px 0;
+        display: inline-block; 
+  margin-left: 10px;}
+
+button{
+        width:30%;
+        padding: 10px;
+        background-color: #333;
+        color: #fffcfc;
+        border: none;
+    }
+
+    button:hover{
+        background-color: #444;
+    }
+  
+    .otp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 50px;
+        }
+
+        .otp-inputs {
+            display: flex;
+        }
+
+        .otp-input {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            margin: 0 5px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            
+        }
+
+        .otp-input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+
+        .otp-submit {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .otp-submit:hover {
+            background-color: rgb(14, 75, 174);
+        }
+
+    </style>
+
+    <script>
+        function moveFocus(current, next) {
+            if (current.value.length >= current.maxLength) {
+                document.getElementById(next).focus();
+            }
+        }
+
+        
+         
+            var otp1 = document.getElementById('otp1').value;
+            var otp2 = document.getElementById('otp2').value;
+            var otp3 = document.getElementById('otp3').value;
+            var otp4 = document.getElementById('otp4').value;
+
+            var otp = otp1 + otp2 + otp3 + otp4;
+
+            if (otp.length == 4) {
+                alert('OTP submitted successfully');
+            } else {
+                alert('Please enter a valid OTP');
+            }
+        </script>
+    <title>Tutors24.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<h1>Tutors24.com</h1>
+
+<form>
+
+    <div class="container">
+        <h3>OTP</h3>
+<p> A 4-digit OPT has been sent to your Email</p>
+        <div class="otp-container">
+            <input type="text" id="otp1" class="otp-input" maxlength="1" onkeypress="movetonext(this, 'otp2')" />
+            <input type="text" id="otp2" class="otp-input" maxlength="1" onkeyup="movetonext(this, 'otp3')" />
+            <input type="text" id="otp3" class="otp-input" maxlength="1" onkeyup="movetonext(this, 'otp4')" />
+            <input type="text" id="otp4" class="otp-input" maxlength="1" />
+        </div>
+        <button onclick="submitOTP()" style="margin-top: 10px;margin-bottom: 7px;">Verify OTP</button>
+    <br>
+    <a href="T44(Forgot password).html">Back</a>
+
+    </div>
